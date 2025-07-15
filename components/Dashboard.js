@@ -6,7 +6,8 @@ import { useAuth } from '../context/AuthContext';
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../filebase';
 import Login from './Login';
-import Loading from './loading';
+import Loading from './Loading';
+
 
 
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ['400'] });
@@ -88,7 +89,7 @@ export default function Dashboard() {
   }, [currentUser, userDataObj])
 
   if (loading) {
-    return <Loading />
+    return <Loading/>
   }
 
   if (!currentUser) {
