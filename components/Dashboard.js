@@ -8,6 +8,7 @@ import { db } from '../filebase';
 import Login from './Login';
 import Loading from './loading';
 
+
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ['400'] });
 
 
