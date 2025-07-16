@@ -4,6 +4,8 @@ import { Fugaz_One } from 'next/font/google';
 import React, { useState } from 'react'
 import Button from './Button';
 import { useAuth } from '../context/AuthContext';
+
+
 const fungz = Fugaz_One({ subsets: ["latin"], weight: ['400']});
 
 
@@ -23,12 +25,12 @@ export default function Login() {
 
     try {
 
-    if (!isRegister) {
-      console.log('signing up a nw user')
-      await signup(email, password)
-    } else {
-      console.log("logging in an existing user")
-    }
+    if (isRegister) {
+        console.log('signing up a new user')
+        await signup(email, password)
+      } else {
+        console.log("logging in an existing user")
+      }
     } catch (err) {
       console.log(err.message)
       await login(email, password)
@@ -60,12 +62,14 @@ export default function Login() {
               text={authenticating ? 'Submitting' : 'Submit' }full />
         </div>
 
-        <p>{isRegister ? 'Already have an account?' : "Don't have any account?" }
-          <button onClick={() => setIsRegister(!isRegister)} className='textGradient'> 
-            {isRegister ? 'Sign In' : 'Sign Up' }
-          </button></p>
+        <p>{isRegister ? 'Already have an account?' : "Don't have an account?" }
+          
+            <button onClick={() => setIsRegister(!isRegister)} className='textGradient'> 
+              {isRegister ? 'Sign In' : 'Sign Up' }
+            </button>
+          </p>
 
-          <p>{!email ? 'Please Register' : ''}</p>
+          <p>{!isRegister? 'Please Register' : ''}</p>
 
     </div>
   )

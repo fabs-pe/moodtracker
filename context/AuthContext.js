@@ -17,7 +17,7 @@ export function AuthProvider({ children }){
     const [loading, setLoading ] = useState(true)
 
     // AUTH HANDLERS
-        function signup(email, password) {
+    function signup(email, password) {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
@@ -39,6 +39,7 @@ export function AuthProvider({ children }){
                 setCurrentUser(user)
                 if(!user){
                     console.log('No user found')
+                    // const userMessage = "No User with this email"
                     return
                 }
 
