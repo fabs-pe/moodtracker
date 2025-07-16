@@ -23,7 +23,7 @@ export default function Login() {
 
     try {
 
-    if (isRegister) {
+    if (!isRegister) {
       console.log('signing up a nw user')
       await signup(email, password)
     } else {
@@ -64,6 +64,8 @@ export default function Login() {
           <button onClick={() => setIsRegister(!isRegister)} className='textGradient'> 
             {isRegister ? 'Sign In' : 'Sign Up' }
           </button></p>
+
+          <p>{!email ? 'Please Register' : ''}</p>
 
     </div>
   )

@@ -17,7 +17,7 @@ export function AuthProvider({ children }){
     const [loading, setLoading ] = useState(true)
 
     // AUTH HANDLERS
-    function signup(email, password) {
+        function signup(email, password) {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
@@ -34,7 +34,7 @@ export function AuthProvider({ children }){
     useEffect(() =>{
         const unsubscribe = onAuthStateChanged(auth, async user =>{
             try{
-                // set user to locl context state
+                // set user to local context state
                 setLoading(true)
                 setCurrentUser(user)
                 if(!user){
