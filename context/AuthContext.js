@@ -3,7 +3,7 @@
 import { auth, db } from "../filebase"
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth"
 import { doc, getDoc } from "firebase/firestore"
-import React, { useContext, useState, useEffect, use} from "react"
+import React, { useContext, useState, useEffect } from "react"
 
 const AuthContext = React.createContext()
 
@@ -39,7 +39,6 @@ export function AuthProvider({ children }){
                 setCurrentUser(user)
                 if(!user){
                     console.log('No user found')
-                    // const userMessage = "No User with this email"
                     return
                 }
 
@@ -50,7 +49,7 @@ export function AuthProvider({ children }){
                 if (docSnap.exists()){
                     console.log('found user data')
                     firebaseData = docSnap.data()
-                    console.log(firebaseData)
+                
                 }
 
                 setUserDataObj(firebaseData)

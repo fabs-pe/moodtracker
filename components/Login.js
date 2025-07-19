@@ -18,25 +18,27 @@ export default function Login() {
 
   async function handleSubmit(){
     if (!email || !password || password.length < 6 ) {
-      return
+      // setErrorMessage("Email and password are required.");
+      return "Email and password are required."
     }
 
     setAuthenticating(true)
 
     try {
 
-    if (isRegister) {
-        console.log('signing up a new user')
-        await signup(email, password)
-      } else {
-        console.log("logging in an existing user")
+      if (isRegister) {
+          console.log('signing up a new user')
+          await signup(email, password)
+        } else {
+          console.log("logging in an existing user")
+          await login(email, password)
+        }
+      } catch (err) {
+        console.log(err.message)
+        await login(email, password)
+      } finally {
+        setAuthenticating(false)
       }
-    } catch (err) {
-      console.log(err.message)
-      await login(email, password)
-    } finally {
-      setAuthenticating(false)
-    }
    }
 
   return (
@@ -69,7 +71,9 @@ export default function Login() {
             </button>
           </p>
 
-          <p>{!isRegister? 'Please Register' : ''}</p>
+          {/* {errorMessage && <p className="text-red-500">{errorMessage}</p>} */}
+
+          
 
     </div>
   )

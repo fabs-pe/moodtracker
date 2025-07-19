@@ -89,7 +89,7 @@ export default function Dashboard() {
   }, [currentUser, userDataObj])
 
   if (loading) {
-    return <Loading/>
+    return <Loading />
   }
 
   if (!currentUser) {
