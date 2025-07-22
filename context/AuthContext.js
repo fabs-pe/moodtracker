@@ -15,10 +15,12 @@ export function AuthProvider({ children }){
     const [currentUser, setCurrentUser] = useState(null)
     const [userDataObj, setUserDataObj] =useState(null)
     const [loading, setLoading ] = useState(true)
+    //  const [authError, setAuthError] = useState(false)
 
     // AUTH HANDLERS
     function signup(email, password) {
         return createUserWithEmailAndPassword(auth, email, password)
+        
     }
 
     function login(email, password) {

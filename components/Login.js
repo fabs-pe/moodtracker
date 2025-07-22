@@ -14,14 +14,20 @@ export default function Login() {
   const [password, setPassword] = useState('')
   const [isRegister, setIsRegister] =useState(false)
   const [authenticating, setAuthenticating] =useState(false)
+  const [authError, setAuthError] = useState(false)
+  const [loginErr, setLoginError] = useState(false)
+
   const {signup, login} = useAuth()
 
+  
+  
   async function handleSubmit(){
     if (!email || !password || password.length < 6 ) {
-      // setErrorMessage("Email and password are required.");
-      return "Email and password are required."
+    setAuthError(true)
+    console.log("try again")
+      return
     }
-
+   
     setAuthenticating(true)
 
     try {
@@ -29,13 +35,16 @@ export default function Login() {
       if (isRegister) {
           console.log('signing up a new user')
           await signup(email, password)
+
+
         } else {
           console.log("logging in an existing user")
           await login(email, password)
         }
       } catch (err) {
         console.log(err.message)
-        await login(email, password)
+        setLoginError(true)
+        // await login(email, password)
       } finally {
         setAuthenticating(false)
       }
@@ -66,14 +75,13 @@ export default function Login() {
 
         <p>{isRegister ? 'Already have an account?' : "Don't have an account?" }
           
-            <button onClick={() => setIsRegister(!isRegister)} className='textGradient'> 
-              {isRegister ? 'Sign In' : 'Sign Up' }
+            <button onClick={() => setIsRegister(!isRegister)}  className='textGradient'> 
+              {isRegister ? 'Sign In' : 'Sign Up' } 
             </button>
           </p>
+          <p className='text-red-600'> {authError ? 'Try again, password should be more then 6 characters' : ' '}</p>
+          <p className='text-red-600'> {loginErr? 'Not Registered' : ' '}</p>
 
-          {/* {errorMessage && <p className="text-red-500">{errorMessage}</p>} */}
-
-          
 
     </div>
   )
