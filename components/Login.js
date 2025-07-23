@@ -44,7 +44,7 @@ export default function Login() {
       } catch (err) {
         console.log(err.message)
         setLoginError(true)
-        // await login(email, password)
+        await login(email, password)
       } finally {
         setAuthenticating(false)
       }
