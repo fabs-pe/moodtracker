@@ -18,7 +18,7 @@ export default function Login() {
   const [loginErr, setLoginError] = useState(false)
   
 
-  const {signup, login} = useAuth()
+  const {signup, login, signInWithGoogle} = useAuth()
 
   
   
@@ -70,12 +70,12 @@ export default function Login() {
         <p>You&apos;re one step away!</p>
 
         <input value={email} onChange={(e) => {setEmail(e.target.value)}} type="email" pattern=".+@example\.com"
-        className='w-full max-w-[400px] mx-auto px-4 py-2 sm:py-3 border border-solid border-indigo-400 rounded-full outline-none
+        className='w-full max-w-[400px] mx-auto px-4 py-2 sm:py-3 border border-solid border-indigo-400 rounded-lg outline-none
         duration-200 hover:border-indigo-600 focus:border-indigo-600 '
                 placeholder='Email' required />
 
         <input value={password} onChange={(e) => {setPassword(e.target.value)}}
-        className='w-full max-w-[400px] mx-auto px-4 py-2 sm:py-3 border border-solid border-indigo-400 rounded-full outline-none
+        className='w-full max-w-[400px] mx-auto px-4 py-2 sm:py-3 border border-solid border-indigo-400 rounded-lg outline-none
         duration-200 hover:border-indigo-600 focus:border-indigo-600 ' 
                 placeholder='Password' type='password'/>
 
@@ -90,6 +90,19 @@ export default function Login() {
               {isRegister ? 'Sign In' : 'Sign Up' } 
             </button>
           </p>
+
+          <div className="max-w-[400px] w-full mx-auto">
+            <button
+              onClick={signInWithGoogle}
+              className="flex items-center justify-center w-full py-3 px-4 bg-white border border-gray-300 rounded-md shadow hover:bg-gray-50 transition duration-150"
+            >
+              <span className="mr-3">
+                <i className="fa-brands fa-google text-lg text-red-500"></i>
+              </span>
+              <span className="text-gray-700 font-semibold">Sign in with Google</span>
+            </button>
+          </div>  
+
           <p className='text-red-600'> {authError ? authError : ' '}</p>
           <p className='text-red-600'> {loginErr? 'Not Registered' : ' '}</p>
         

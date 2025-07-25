@@ -1,7 +1,7 @@
 'use client'
 
-import { auth, db } from "../filebase"
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth"
+import { auth, db, googleProvider } from "../filebase"
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, signInWithPopup } from "firebase/auth"
 import { doc, getDoc } from "firebase/firestore"
 import React, { useContext, useState, useEffect } from "react"
 
@@ -65,6 +65,15 @@ export function AuthProvider({ children }){
         return unsubscribe
     }, [])
 
+    const signInWithGoogle  = async () => {
+        try{
+        await signInWithPopup(auth, googleProvider)
+        } catch (err){
+            console.error(err)
+        }
+
+    }
+
 
 
     const value = {
@@ -74,6 +83,7 @@ export function AuthProvider({ children }){
         signup,
         logout,
         login,
+        signInWithGoogle,
         loading
 
 
