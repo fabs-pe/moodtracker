@@ -50,7 +50,7 @@ export default function Calendar(props) {
             <div className='grid grid-cols-5 gap-4'>
                 <button onClick={() => {
                     handleIncrementMonth(-1)
-                }} className='mr-auto text-indigo-400 text-lg sm:text-xl duration-200 hover:opacity-60'>
+                }} className='mr-auto text-emerald-800 text-lg sm:text-xl duration-200 hover:opacity-60'>
                     <i className="fa-solid fa-circle-chevron-left"></i>
                 </button>
                 
@@ -58,7 +58,7 @@ export default function Calendar(props) {
                 
                 <button onClick={() => {
                     handleIncrementMonth(+1)
-                }} className='ml-auto text-indigo-400 text-lg sm:text-xl duration-200 hover:opacity-60'>
+                }} className='ml-auto text-emerald-800 text-lg sm:text-xl duration-200 hover:opacity-60'>
                     <i className="fa-solid fa-circle-chevron-right"></i>
                 </button>
             </div>
@@ -81,13 +81,13 @@ export default function Calendar(props) {
                                 }
 
                                 let color = demo ?
-                                    gradients.indigo[baseRating[dayIndex]] :
+                                    gradients.forest[baseRating[dayIndex]] :
                                     dayIndex in data ?
-                                        gradients.indigo[data[dayIndex]] :
+                                        gradients.forest[data[dayIndex]] :
                                         'white'
 
                                 return (
-                                    <div style={{ background: color }} className={'text-xs sm:text-sm border border-solid p-2 flex items-center gap-2 justify-between rounded-lg ' + (isToday ? ' border-indigo-400' : ' border-indigo-100') + (color === 'white' ? ' text-indigo-400' : ' text-white')} key={dayOfWeekIndex}>
+                                    <div style={{ background: color }} className={'text-xs sm:text-sm border border-solid p-2 flex items-center gap-2 justify-between rounded-lg ' + (isToday ? ' border-emerald-600' : ' border-emerald-950 not-[]:') + (color === 'white' ? ' text-emerald-950 ' : ' text-white')} key={dayOfWeekIndex}>
                                         <p>{dayIndex}</p>
                                     </div>
                                 )

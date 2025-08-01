@@ -70,13 +70,13 @@ export default function Login() {
         <p>You&apos;re one step away!</p>
 
         <input value={email} onChange={(e) => {setEmail(e.target.value)}} type="email" pattern=".+@example\.com"
-        className='w-full max-w-[400px] mx-auto px-4 py-2 sm:py-3 border border-solid border-indigo-400 rounded-lg outline-none
-        duration-200 hover:border-indigo-600 focus:border-indigo-600 '
+        className='w-full max-w-[400px] mx-auto px-4 py-2 sm:py-3 border border-solid border-emerald-500 rounded-lg outline-none
+        duration-200 hover:border-emerald-600 focus:border-emerald-600 '
                 placeholder='Email' required />
 
         <input value={password} onChange={(e) => {setPassword(e.target.value)}}
-        className='w-full max-w-[400px] mx-auto px-4 py-2 sm:py-3 border border-solid border-indigo-400 rounded-lg outline-none
-        duration-200 hover:border-indigo-600 focus:border-indigo-600 ' 
+        className='w-full max-w-[400px] mx-auto px-4 py-2 sm:py-3 border border-solid border-emerald-500  rounded-lg outline-none
+        duration-200 hover:border-emerald-600 focus:border-emerald-600  ' 
                 placeholder='Password' type='password'/>
 
         <div className='max-w-[400px] w-full mx-auto'>

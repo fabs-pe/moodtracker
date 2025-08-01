@@ -4,6 +4,17 @@ export const gradients = {
     blue: ['#ccfffa', '#9afefe', '#66f1fc', '#41dffa', '#07c2f7', '#0497d4', '#0171b1', '#02518e', '#003a76',],
     yellow: ['#fff8db', '#fff0b8', '#ffe495', '#ffd97b', '#ffc84f', '#dba339', '#b78127', '#936118', '#7a4b10',],
     pink: ['#ffd8f2', '#ffb1ea', '#ff8aea', '#ff6df1', '#ff3dfe', '#cd2ddb', '#9d1fb7', '#731493', '#540b7a',],
+ forest: [
+  '#d5eee9',  // very light / pastel greenish cyan
+  '#a2ccc8',
+  '#70aba7',
+  '#4a6c6f',  // base color
+  '#3f5d60',
+  '#37504f',
+  '#2e423d',
+  '#233230', 
+  '#18231f'   // dark, almost forest green
+],
 }
 
 export const baseRating = {

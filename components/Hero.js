@@ -4,13 +4,15 @@ import Button from './Button';
 import Calendar from './Calendar';
 import Link from 'next/link';
 import CallToAction from './CallToAction';
+import Editor from './Editor';
 const fungz = Fugaz_One({ subsets: ["latin"], weight: ['400']});
 
 export default function Hero() {
   return (
+    <>
     <div className='py-4 md:py-12 flex flex-col gap-8 sm:gap-10 '>
         <h1 className={'text-5xl sm:text-text-6xl md:text-7xl text-center ' + fungz.className}>
-            <span className='textGradient'>Broodl</span> helps you track your 
+            <span className='textGradient'>MoodMate</span> helps you track your 
             <span className='textGradient'> daily</span> mood!
         </h1>
         <p className='text-lg sm:text:xl md:text-2xl text-center w-full mx-auto max-w-[700px] '>
@@ -21,5 +23,7 @@ export default function Hero() {
         <Calendar  demo/>
 
     </div>
+    </>
+    
   )
 }

@@ -7,8 +7,8 @@ const fungz = Fugaz_One({subsets: ["latin"], weight: ['400']});
 export default function Button(props) {
     const { google, text, dark, full, clickHandler } = props
   return (
-    <button onClick={clickHandler} className={'overflow-hidden duration-200 hover:opacity-65 border-2 border-solid border-indigo-600 rounded-md ' + 
-        (dark ? ' text-white bg-indigo-600 ' : ' text-indigo-600 ') +
+    <button onClick={clickHandler} className={'overflow-hidden duration-200 hover:opacity-65 border-2 border-solid border-emerald-900 rounded-md ' + 
+        (dark ? ' text-white bg-emerald-900  ' : ' text-emerald-900  ') +
         (full ? ' grid place-items-center w-full  ' : '')}>
 
         

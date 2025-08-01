@@ -7,6 +7,7 @@ import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../filebase';
 import Login from './Login';
 import Loading from './Loading';
+import Editor from './Editor';
 
 
 
@@ -98,7 +99,7 @@ export default function Dashboard() {
 
   return (
     <div className='flex flex-col flex-1 gap-8 sm:gap-12 md:gap-16'>
-      <div className='grid grid-cols-3 bg-indigo-50 text-indigo-500 p-4 gap-4 rounded-lg'>
+      <div className='grid grid-cols-3 bg-emerald-50 text-emerald-900  p-4 gap-4 rounded-lg'>
         {Object.keys(statuses).map((status, statusIndex) => {
           return (
             <div key={statusIndex} className=' flex flex-col gap-1 sm:gap-2'>
@@ -117,9 +118,9 @@ export default function Dashboard() {
             <button onClick={() => {
               const currentMoodValue = moodIndex + 1
               handleSetMood(currentMoodValue)
-            }} className={'p-4 px-5 rounded-2xl purpleShadow duration-200 bg-indigo-50 hover:bg-indigo-100 text-center flex flex-col items-center gap-2 flex-1 '} key={moodIndex}>
+            }} className={'p-4 px-5 rounded-2xl purpleShadow duration-200 bg-emerald-50 hover:bg-iemerald-100 text-center flex flex-col items-center gap-2 flex-1 '} key={moodIndex}>
               <p className='text-4xl sm:text-5xl md:text-6xl'>{moods[mood]}</p>
-              <p className={'text-indigo-500 text-xs sm:text-sm md:text-base ' + fugaz.className}>{mood}</p>
+              <p className={'text-emerald-900  text-xs sm:text-sm md:text-base ' + fugaz.className}>{mood}</p>
             </button>
           )
         })}

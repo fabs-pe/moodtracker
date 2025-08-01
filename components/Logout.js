@@ -18,10 +18,16 @@ export default function Logout() {
             <Link href={ '/dashboard'}>
                 <Button text="Go to Dashboard" />
             </Link>
+            
         )
     }
   return (
+    <>
+        <Link href = { '/journal'}>
+            <Button text="Journal" />
+        </Link>
 
-    <Button text='Logout' clickHandler={logout} />
+        <Button text='Logout' clickHandler={logout} />
+  </>
   )
 }
