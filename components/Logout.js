@@ -14,20 +14,22 @@ export default function Logout() {
     }
 
     if (pathname === '/'){
+        // return null
         return (
             <Link href={ '/dashboard'}>
-                <Button text="Go to Dashboard" />
+                <Button text="Dashboard" />
             </Link>
             
         )
     }
+    
   return (
     <>
-        <Link href = { '/journal'}>
-            <Button text="Journal" />
-        </Link>
+        {/* <Link href = { '/journal'}> */}
+            {/* <Button text="Journal" />
+        </Link> */}
 
-        <Button text='Logout' clickHandler={logout} />
+        <Button text='Logout' clickHandler={logout} dark />
   </>
   )
 }

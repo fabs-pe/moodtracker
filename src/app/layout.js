@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AuthProvider } from "../../context/AuthContext";
 import Head from "./head";
 import Logout from "../../components/Logout";
+import JournalButton from "../../components/JournalButton";
 
 // font imports
 const geistSans = Geist({
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
       <h1 className={'text-base sm:text-lg textGradient ' + fungz.className}>MoodMate</h1>
       </Link>
       <Logout />
+      <JournalButton />
     </header>
   )
 
