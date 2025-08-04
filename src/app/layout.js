@@ -38,8 +38,12 @@ export default function RootLayout({ children }) {
   )
 
   const footer = (
-    <footer className="p-4 sm:p-8 grid place-items-center " >
-      <p className={'text-slate-700 ' + fungz.className}>Created with 💙 by Fabian Perre  </p>
+    <footer className={'p-4 sm:p-8 flex  items-center justify-center text-teal-600 text-2xl ' + fungz.className }>
+        <div className="flex gap-x-6">       
+          <Link href='https://github.com/fabs-pe/moodtracker' > <i className="fa-brands fa-github"></i></Link>
+          <Link href='https://www.linkedin.com/in/fabianperre'><i className="fa-brands fa-linkedin"></i></Link>
+          <Link href='mailto: fabs.perre@gmail.com'><i className="fa-brands fa-google"></i></Link>
+       </div>
 
     </footer>
   )

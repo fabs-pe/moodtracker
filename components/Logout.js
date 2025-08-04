@@ -13,15 +13,15 @@ export default function Logout() {
         return null
     }
 
-    if (pathname === '/'){
-        // return null
-        return (
-            <Link href={ '/dashboard'}>
-                <Button text="Dashboard" />
-            </Link>
+    // if (pathname === '/'){
+       
+    //     return (
+    //         <Link href={ '/dashboard'}>
+    //             <Button text="Dashboard" />
+    //         </Link>
             
-        )
-    }
+    //     )
+    // }
     
   return (
     <>
